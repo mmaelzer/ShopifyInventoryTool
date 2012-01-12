@@ -1,0 +1,9 @@
+Vendor: somevendor
+Type: sometype
+Tags: atagofsomesort
+Price: 123.45
+Description:
+Title of Description Section
+First Thing: {1}
+Manufacturer: Some Vendor
+Second Thing: {2}
