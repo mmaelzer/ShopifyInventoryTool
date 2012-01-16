@@ -233,34 +233,48 @@ namespace ShopifyInventoryTool
         {
             var builder = string.Empty;
 
-            builder += string.Format("<h4>{0}</h4>", data.DetailsHeader);
-            builder += '\n';
-            builder += "<ul>";
-            builder += '\n';
-            foreach (var detail in data.Details)
+            if (data.Details.Count > 0 && data.Details[0].Contains("{{"))
             {
-                var match = Regex.Match(detail, "{\\d+}");
-                if (match != null)
+                foreach (var detail in data.Details)
                 {
-                    var num = Regex.Match(match.ToString(), "\\d+");
-                    int i;
-                    if (Int32.TryParse(num.ToString(), out i) && filename.Length >= i)
+                    var line = detail.Replace("{{", string.Empty).Replace("}}", string.Empty);
+                    if (!string.IsNullOrEmpty(line))
                     {
-                        builder += string.Format("<li>{0}</li>", detail.Replace(match.ToString(), filename[i - 1].Replace("_", " ")));
+                        builder += line + '\n';
+                    }
+                }
+            }
+            else
+            {
+                builder += string.Format("<h4>{0}</h4>", data.DetailsHeader);
+                builder += '\n';
+                builder += "<ul>";
+                builder += '\n';
+                foreach (var detail in data.Details)
+                {
+                    var match = Regex.Match(detail, "{\\d+}");
+                    if (match != null)
+                    {
+                        var num = Regex.Match(match.ToString(), "\\d+");
+                        int i;
+                        if (Int32.TryParse(num.ToString(), out i) && filename.Length >= i)
+                        {
+                            builder += string.Format("<li>{0}</li>", detail.Replace(match.ToString(), filename[i - 1].Replace("_", " ")));
+                        }
+                        else
+                        {
+                            builder += string.Format("<li>{0}</li>", detail);
+                        }
                     }
                     else
                     {
                         builder += string.Format("<li>{0}</li>", detail);
                     }
+
+                    builder += '\n';
                 }
-                else
-                {
-                    builder += string.Format("<li>{0}</li>", detail);
-                }
-                
-                builder += '\n';
+                builder += "</ul>";
             }
-            builder += "</ul>";
 
             builder = builder.Replace("\"", "\"\"");
 
@@ -449,7 +463,7 @@ namespace ShopifyInventoryTool
             }
 
             string descriptionHeader = null;
-            if (description.Count > 0)
+            if (description.Count > 0 && !description[0].Contains("{{"))
             {
                 descriptionHeader = description[0];
                 description.RemoveAt(0);

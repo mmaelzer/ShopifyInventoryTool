@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this._splitContainer = new System.Windows.Forms.SplitContainer();
             this._addTagButton = new System.Windows.Forms.Button();
             this._addTypeButton = new System.Windows.Forms.Button();
@@ -456,6 +457,7 @@
             this.ClientSize = new System.Drawing.Size(984, 567);
             this.Controls.Add(this._splitContainer);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(800, 605);
             this.Name = "MainForm";
             this.Text = "Shopify Inventory Utility";
