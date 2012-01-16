@@ -91,3 +91,7 @@ Epilogue
 ------------
 
 I'm fully aware that I could generalize this utility even more. However, this implementation works very well for us, and I honestly don't know what generalizing the utility further would gain for people. That being said, I'd happy to be convinced that I'm wrong.
+
+Credits
+----------
+Shopify Inventory Tool [icon source](http://browse.deviantart.com/customization/icons/dock/?order=9&offset=48#/d3c3t3x) - Variations 1 by GuillenDesign 
