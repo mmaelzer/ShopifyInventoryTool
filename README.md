@@ -18,7 +18,7 @@ Importing from Images
 
 Importing from images is really the primary utility of SIT. In our case, we went from hours to generate a hundred or so products down to just a handful of minutes using the import from images functionality of SIT.
 
-The idea behind is generating a `products.csv` file from images is that the image files themselves contain useful information in addition to a `details.txt` file that lives in the folders with the product images.
+SIT takes two sets of data into account when generating a Shopify `products.csv` file. The first piece of data is the images' filenames themselves which should contain useful information. The second piece of data is a `details.txt` file that lives in subfolders with associated images.
 
 ### Details.txt
 
@@ -83,6 +83,10 @@ To override the default HTML layout, wrap your description in double curly brace
 	}}
 	
 
+### Organizing data for running SIT
+
+SIT will glady go through a folder and all of the folder's subfolders, looking for image files and `details.txt` files. Using a system of folder naming with descriptive image file names will yield best results.
+	
 Epilogue
 ------------
 
