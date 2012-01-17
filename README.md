@@ -65,10 +65,11 @@ SIT automatically generates the proper HTML for a product description when you l
 
 To override the default HTML layout, wrap your description in double curly braces, `{{ description }}` like so:
 
-	Vendor: Robert Kaufman
-	Type: bundle
-	Tags: bundle
-	Price: 40.00
+	Vendor: somevendor
+	Type: sometype
+	Tags: atagofsomesort
+	Price: 123.45
+	Url: http://where-to-find-your-images
 	Description:
 	{{
 	<div>
