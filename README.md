@@ -4,7 +4,7 @@ Shopify Inventory Tool
 Backstory
 ---------------
 
-While creating an ecommerce site using Shopify, we ran into the issue of having thousands of product images with usable information in the file names, but no way of easily turning that into useful Shopify data. Furthermore, we had no good way, other than the ever-faithful Microsoft Excel, of interacting with and modifying product.csv files provided by Shopify. This utility was born out of that need.
+While creating an [ecommerce site](http://www.pappysquilting.com) site using Shopify, we ran into the issue of having thousands of product images with usable information in the file names, but no way of easily turning that into useful Shopify data. Furthermore, we had no good way, other than the ever-faithful Microsoft Excel, of interacting with and modifying product.csv files provided by Shopify. This utility was born out of that need.
 
 
 Overview
