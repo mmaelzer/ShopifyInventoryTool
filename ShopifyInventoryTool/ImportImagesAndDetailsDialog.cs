@@ -31,7 +31,10 @@ namespace ShopifyInventoryTool
 
         private void _importButton_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            if (!string.IsNullOrEmpty(_locationTb.Text))
+            {
+                DialogResult = DialogResult.OK;
+            }
         }
     }
 }

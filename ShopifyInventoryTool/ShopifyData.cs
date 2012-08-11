@@ -323,7 +323,7 @@ namespace ShopifyInventoryTool
             {
                 foreach (var fileName in Directory.GetFiles(path, "*.*", SearchOption.TopDirectoryOnly))
                 {
-                    if (!ValidExtensions.Contains(Path.GetExtension(fileName)))
+                    if (!ValidExtensions.Contains(Path.GetExtension(fileName).ToLower()))
                     {
                         continue;
                     }
